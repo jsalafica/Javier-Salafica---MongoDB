@@ -167,7 +167,7 @@ db.productos.find({
 db.productos.find({ price: { $gt: 3000 } });
 
 // iv - Solo nombre del tercer producto mas barato
-db.productos.find({}, { title: 1 }).sort({ price: 1 }).limit(1).skip(2);
+db.productos.find({}, { title: 1, _id: 0 }).sort({ price: 1 }).limit(1).skip(2);
 
 // c - Actualizo agregando campo stock con valor de 100
 db.productos.updateMany(
