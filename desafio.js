@@ -166,8 +166,8 @@ db.productos.find({
 // iii - Listar productos con precio mayor a 3000
 db.productos.find({ price: { $gt: 3000 } });
 
-// iv - Tercer producto mas barato
-db.productos.find().sort({ price: 1 }).limit(1).skip(2);
+// iv - Solo nombre del tercer producto mas barato
+db.productos.find({}, { title: 1 }).sort({ price: 1 }).limit(1).skip(2);
 
 // c - Actualizo agregando campo stock con valor de 100
 db.productos.updateMany(
